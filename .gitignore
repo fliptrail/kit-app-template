@@ -36,3 +36,6 @@ deps/**/user.toml
 
 # Streaming EventTrace
 *.etli
+
+usd_assets_cache.csv
+usd_assets.ndjson
