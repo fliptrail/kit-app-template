@@ -8,7 +8,12 @@ echo "🔧 Setting up ZincSearch with USD data..."
 # Step 2: Start ZincSearch container (based on official docs)
 echo "🚀 Starting ZincSearch container..."
 
+echo "Creating a docker network for ZincSearch..."
+docker network create usd-search-network
+
 docker run -d \
+  --name zincsearch \
+  --network usd-search-network \
   -p 4080:4080 \
   -e ZINC_DATA_PATH="/data" \
   -e ZINC_FIRST_ADMIN_USER=admin \

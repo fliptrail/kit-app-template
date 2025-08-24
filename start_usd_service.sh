@@ -7,11 +7,12 @@ echo "🚀 Starting USD Search Service..."
 
 # Build the USD service container using repo.sh
 echo "🔨 Building USD service container using repo.sh..."
-# ./repo.sh package --container --name tonks-usd-search
+./repo.sh package --container --name tonks-usd-search
 
   # Start the container
   echo "▶️ Starting USD service container..."
   docker run -d \
+    --network usd-search-network \
     -p 8011:8011 \
     tonks-usd-search
 

@@ -11,14 +11,12 @@
 from pathlib import Path
 from pydantic import BaseModel, Field
 
-import omni.kit.commands
-import omni.usd
 import omni.simready.explorer as simready_explorer
 from omni.services.core.routers import ServiceAPIRouter
 from .simple_zinc_client import SimpleZincClient
 
 router = ServiceAPIRouter(tags=["Tonks USD Search Extension"])
-zinc_client = SimpleZincClient(url="http://localhost:4080", username="admin", password="Complexpass#123")
+zinc_client = SimpleZincClient(url="http://zincsearch:4080", username="admin", password="Complexpass#123")
 
 class USDSearchQuery(BaseModel):
     text: str
